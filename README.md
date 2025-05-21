@@ -1,4 +1,4 @@
-![solvd-nodejs-banner](/solvd-nodejs-banner.jpg)
+![solvd-nodejs-banner](/solvd-banner.png)
 
 # solvd-nodejs
 
