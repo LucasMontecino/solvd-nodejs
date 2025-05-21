@@ -1,4 +1,4 @@
-<img src='./solvd-banner-2.png' alt='solvd-banner' width='790' height='300'/>
+<img src='./solvd-banner-2.png' alt='solvd-banner'/>
 
 # solvd-nodejs
 
