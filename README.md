@@ -1,4 +1,4 @@
-![solvd-nodejs-banner](/solvd-banner.png =790x150)
+<img src='./solvd-banner.png' alt='solvd-banner' width='790' height='150'/>
 
 # solvd-nodejs
 
