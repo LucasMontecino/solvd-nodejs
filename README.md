@@ -1,4 +1,4 @@
-# solvd-nodejs
+# Solvd Nodejs Course 2025
 
 This space was created with the main goal of tracking Solvd Node.js course's assignments.
 
