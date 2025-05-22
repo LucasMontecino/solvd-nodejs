@@ -126,3 +126,59 @@ String.prototype.multiply = function (str) {
 
   return result;
 };
+
+const codePlus = document.querySelector('.plus');
+
+const myString = '255';
+const result = myString.plus('412');
+
+const codePlusContent = `
+  <code class='code__child'><span class='keyword'>let</span> <span class='variable'>myString</span> = '${myString}'</code>
+  <code class='code__child'><span class='keyword'>let</span> <span class='variable'>result</span> = <span class='variable'>myString</span>.plus('412')</code>
+  <code class='code__child'>console.log(<span class='variable'>result</span>);</code>
+  <p class='text-comment'>// result = '${result}';</p>
+`;
+
+codePlus.innerHTML = codePlusContent;
+
+const codeMinus = document.querySelector('.minus');
+
+const myString2 = '255';
+const result2 = myString2.minus('122');
+
+const codeMinusContent = `
+  <code class='code__child'><span class='keyword'>let</span> <span class='variable'>myString</span> = '${myString2}'</code>
+  <code class='code__child'><span class='keyword'>let</span> <span class='variable'>result</span> = <span class='variable'>myString</span>.minus('122')</code>
+  <code class='code__child'>console.log(<span class='variable'>result</span>);</code>
+  <p class='text-comment'>// result = '${result2}';</p>
+`;
+
+codeMinus.innerHTML = codeMinusContent;
+
+const codeDivide = document.querySelector('.divide');
+
+const myString3 = '144';
+const result3 = myString3.divide('24');
+
+const codeDivideContent = `
+  <code class='code__child'><span class='keyword'>let</span> <span class='variable'>myString</span> = '${myString3}'</code>
+  <code class='code__child'><span class='keyword'>let</span> <span class='variable'>result</span> = <span class='variable'>myString</span>.divide('24')</code>
+  <code class='code__child'>console.log(<span class='variable'>result</span>);</code>
+  <p class='text-comment'>// result = '${result3}';</p>
+`;
+
+codeDivide.innerHTML = codeDivideContent;
+
+const codeMultiply = document.querySelector('.multiply');
+
+const myString4 = '327';
+const result4 = myString4.multiply('24');
+
+const codeMultiplyContent = `
+  <code class='code__child'><span class='keyword'>let</span> <span class='variable'>myString</span> = '${myString4}'</code>
+  <code class='code__child'><span class='keyword'>let</span> <span class='variable'>result</span> = <span class='variable'>myString</span>.multiply('24')</code>
+  <code class='code__child'>console.log(<span class='variable'>result</span>);</code>
+  <p class='text-comment'>// result = '${result4}';</p>
+`;
+
+codeMultiply.innerHTML = codeMultiplyContent;
