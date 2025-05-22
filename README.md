@@ -2,6 +2,12 @@
 
 This space was created with the main goal of tracking Solvd Node.js course's assignments.
 
+## Homeworks and important topics
+
+### Block 1
+
+- Homework 1: <a href='https://github.com/LucasMontecino/solvd-nodejs/tree/main/block-1/homework-1' target='_blank' rel='noopener noreferrer'>https://github.com/LucasMontecino/solvd-nodejs/tree/main/block-1/homework-1</a>
+
 # Acknowledgment
 
 <br />
