@@ -1,0 +1,15 @@
+{
+  "name": "solvd-nodejs",
+  "version": "1.0.0",
+  "description": "global configs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier . --write"
+  },
+  "author": "Lucas Montecino",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "3.5.3"
+  }
+}
