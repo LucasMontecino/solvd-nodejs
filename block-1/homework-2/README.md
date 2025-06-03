@@ -1,5 +1,9 @@
 # Homework 2
 
+### Instructions to run the project:
+
+You can simply run **`npm start`** or you might want to start the project in development mode, to do so run **`npm run dev`**.
+
 ### Task
 
 Create a JavaScript library that provides advanced data transformation functions. The library should include the following features:
