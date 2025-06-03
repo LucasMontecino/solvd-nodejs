@@ -72,10 +72,7 @@ String.prototype.divide = function (str) {
 
     current = parseInt(current).toString();
 
-    if (
-      current === '' ||
-      parseInt(current) < parseInt(divisor)
-    ) {
+    if (current === '' || parseInt(current) < parseInt(divisor)) {
       result = `0${result}`;
       console.log('the partial result...', result);
     } else {
