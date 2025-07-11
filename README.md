@@ -8,6 +8,10 @@ This space was created with the main goal of tracking Solvd Node.js course's ass
 
 - Homework 1: <a href='https://github.com/LucasMontecino/solvd-nodejs/tree/main/block-1/homework-1' target='_blank' rel='noopener noreferrer'>https://github.com/LucasMontecino/solvd-nodejs/tree/main/block-1/homework-1</a>
 - Homework 2: <a href='https://github.com/LucasMontecino/solvd-nodejs/tree/main/block-1/homework-2' target='_blank' rel='noopener noreferrer'>https://github.com/LucasMontecino/solvd-nodejs/tree/main/block-1/homework-2</a>
+- Homework 3: <a href='https://github.com/LucasMontecino/solvd-nodejs/tree/main/block-1/homework-3' target='_blank' rel='noopener noreferrer'>https://github.com/LucasMontecino/solvd-nodejs/tree/main/block-1/homework-3</a>
+- Homework 4: <a href='https://github.com/LucasMontecino/solvd-nodejs/tree/main/block-1/homework-4' target='_blank' rel='noopener noreferrer'>https://github.com/LucasMontecino/solvd-nodejs/tree/main/block-1/homework-4</a>
+- Homework 5: <a href='https://github.com/LucasMontecino/solvd-nodejs/tree/main/block-1/homework-5' target='_blank' rel='noopener noreferrer'>https://github.com/LucasMontecino/solvd-nodejs/tree/main/block-1/homework-5</a>
+- Homework 6: <a href='https://github.com/LucasMontecino/solvd-nodejs/tree/main/block-1/homework-6' target='_blank' rel='noopener noreferrer'>https://github.com/LucasMontecino/solvd-nodejs/tree/main/block-1/homework-6</a>
 
 # Acknowledgment
 
