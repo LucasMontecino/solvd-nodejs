@@ -1,0 +1,16 @@
+{
+  "name": "homework-6",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "jest"
+  },
+  "author": "Lucas Montecino",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "jest": "^30.0.4"
+  }
+}
