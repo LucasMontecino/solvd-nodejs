@@ -1,4 +1,5 @@
 import { Stack } from './stack.js';
+import { Queue } from './queue.js';
 
 const myStack = new Stack();
 console.log('first stack call..', myStack.stack);
@@ -16,3 +17,22 @@ myStack.push({ name: 'Martin', username: 'martin5', age: 22 });
 myStack.push({ name: 'Juan', username: 'juan23', age: 23 });
 
 console.log('testing peek method from stack..', myStack.peek());
+
+const myQueue = new Queue();
+console.log('first queue call..', myQueue.queue);
+
+myQueue.enqueue({ name: 'Tony', username: 'tony1', age: 37 });
+myQueue.enqueue({ name: 'Gonzalo', username: 'gon7', age: 32 });
+
+console.log('second queue call..', myQueue.queue);
+
+myQueue.dequeue();
+
+console.log('third queue call..', myQueue.queue);
+
+myQueue.enqueue({ name: 'Rafa', username: 'rafa6', age: 24 });
+myQueue.enqueue({ name: 'Lisa', username: 'lisa12', age: 23 });
+
+console.log('fourth queue call..', myQueue.queue);
+
+console.log('testing peek front from queue..', myQueue.peek());
