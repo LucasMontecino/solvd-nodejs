@@ -1,6 +1,7 @@
 import { Stack } from './stack.js';
 import { Queue } from './queue.js';
 import { List } from './linkedList.js';
+import { BinaryTree } from './binaryTree.js';
 
 /* --------------------------------------- */
 /*  Stack Implementation                   */
@@ -50,13 +51,26 @@ import { List } from './linkedList.js';
 /*  Linked List Implementation             */
 /* --------------------------------------- */
 
-const myList = new List();
+// const myList = new List();
 
-myList.insert(10);
-myList.insert(2);
-myList.insert(4);
-myList.insert(3);
+// myList.insert(10);
+// myList.insert(2);
+// myList.insert(4);
+// myList.insert(3);
 
-myList.remove(10);
-console.log(myList.search(4));
-console.log(myList.head);
+// myList.remove(10);
+// console.log(myList.search(4));
+// console.log(myList.head);
+
+/* --------------------------------------- */
+/*  Binary Tree Implementation             */
+/* --------------------------------------- */
+
+const myBinaryTree = new BinaryTree();
+myBinaryTree.insert(10);
+myBinaryTree.insert(5);
+myBinaryTree.insert(7);
+myBinaryTree.insert(12);
+
+console.log(myBinaryTree.search(13));
+console.log(myBinaryTree.traverse());
