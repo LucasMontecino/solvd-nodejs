@@ -2,7 +2,7 @@ import { MinMaxStack, Stack } from './stack.js';
 import { Queue } from './queue.js';
 import { List } from './linkedList.js';
 import { BinaryTree } from './binaryTree.js';
-import { Graph } from './graph.js';
+import { Graph, UnweightedGraph, WeightedGraph } from './graph.js';
 
 /* --------------------------------------- */
 /*  Stack Implementation                   */
@@ -117,16 +117,59 @@ import { Graph } from './graph.js';
 /*  Binary Search Tree Check               */
 /* --------------------------------------- */
 
-const bts = new BinaryTree();
+// const bts = new BinaryTree();
 
-bts.insert(10);
-bts.insert(5);
-bts.insert(15);
-bts.insert(12);
+// bts.insert(10);
+// bts.insert(5);
+// bts.insert(15);
+// bts.insert(12);
 
-console.log('result check..', BinaryTree.isBST(bts.root));
+// console.log('result check..', BinaryTree.isBST(bts.root));
 
-bts.root.right.left.value = 8;
+// bts.root.right.left.value = 8;
 
-console.log('result check..', BinaryTree.isBST(bts.root));
-console.log('bts 3...', bts.root);
+// console.log('result check..', BinaryTree.isBST(bts.root));
+// console.log('bts 3...', bts.root);
+
+/* ------------------------------------------ */
+/*  Shortest path with BFS                    */
+/* ------------------------------------------ */
+
+// const graph = new UnweightedGraph();
+
+// graph.addEdge('A', 'B');
+// graph.addEdge('A', 'C');
+// graph.addEdge('B', 'D');
+// graph.addEdge('D', 'C');
+// graph.addEdge('D', 'E');
+
+// console.log(graph.shortestPathBFS('A', 'E'));
+
+/* ------------------------------------------ */
+/*  Shortest path with Dijktra's algorithm    */
+/* ------------------------------------------ */
+
+// const weightedGraph = new WeightedGraph();
+
+// weightedGraph.addEdge('A', 'B', 4);
+// weightedGraph.addEdge('A', 'C', 2);
+// weightedGraph.addEdge('C', 'D', 1);
+// weightedGraph.addEdge('D', 'E', 1);
+// weightedGraph.addEdge('B', 'E', 7);
+
+// console.log(weightedGraph.dijkstra('A', 'E'));
+
+/* ---------------------------------------------------- */
+/*  Floyd's Cycle Detection Algorithm implementation    */
+/* ---------------------------------------------------- */
+
+const list = new List();
+const a = list.insert('A');
+const b = list.insert('B');
+const c = list.insert('C');
+const d = list.insert('D');
+
+console.log(list.hasCycle());
+
+d.next = b;
+console.log(list.hasCycle());
