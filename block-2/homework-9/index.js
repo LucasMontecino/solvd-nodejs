@@ -1,4 +1,4 @@
-import { Stack } from './stack.js';
+import { MinMaxStack, Stack } from './stack.js';
 import { Queue } from './queue.js';
 import { List } from './linkedList.js';
 import { BinaryTree } from './binaryTree.js';
@@ -80,16 +80,53 @@ import { Graph } from './graph.js';
 /*  Graph Implementation                   */
 /* --------------------------------------- */
 
-const myGraph = new Graph();
-myGraph.addVertex('A');
-myGraph.addVertex('B');
-myGraph.addVertex('C');
-myGraph.addVertex('D');
+// const myGraph = new Graph();
+// myGraph.addVertex('A');
+// myGraph.addVertex('B');
+// myGraph.addVertex('C');
+// myGraph.addVertex('D');
 
-myGraph.addEdge('A', 'B');
-myGraph.addEdge('A', 'C');
-myGraph.addEdge('B', 'D');
+// myGraph.addEdge('A', 'B');
+// myGraph.addEdge('A', 'C');
+// myGraph.addEdge('B', 'D');
 
-console.log(myGraph);
-console.log(myGraph.depthFirstSearch('B'));
-console.log(myGraph.breadthFirstSearch('A'));
+// console.log(myGraph);
+// console.log(myGraph.depthFirstSearch('B'));
+// console.log(myGraph.breadthFirstSearch('A'));
+
+/* --------------------------------------- */
+/*  MinMax Stack Implementation            */
+/* --------------------------------------- */
+
+// const myMinMaxStack = new MinMaxStack();
+
+// myMinMaxStack.push(3);
+// myMinMaxStack.push(2);
+// myMinMaxStack.push(9);
+// myMinMaxStack.push(1);
+// myMinMaxStack.push(7);
+
+// console.log(myMinMaxStack);
+// const max = myMinMaxStack.getMax();
+// const min = myMinMaxStack.getMin();
+
+// console.log('max...', max);
+// console.log('min...', min);
+
+/* --------------------------------------- */
+/*  Binary Search Tree Check               */
+/* --------------------------------------- */
+
+const bts = new BinaryTree();
+
+bts.insert(10);
+bts.insert(5);
+bts.insert(15);
+bts.insert(12);
+
+console.log('result check..', BinaryTree.isBST(bts.root));
+
+bts.root.right.left.value = 8;
+
+console.log('result check..', BinaryTree.isBST(bts.root));
+console.log('bts 3...', bts.root);
