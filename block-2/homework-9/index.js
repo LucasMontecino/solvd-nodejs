@@ -2,6 +2,7 @@ import { Stack } from './stack.js';
 import { Queue } from './queue.js';
 import { List } from './linkedList.js';
 import { BinaryTree } from './binaryTree.js';
+import { Graph } from './graph.js';
 
 /* --------------------------------------- */
 /*  Stack Implementation                   */
@@ -66,11 +67,29 @@ import { BinaryTree } from './binaryTree.js';
 /*  Binary Tree Implementation             */
 /* --------------------------------------- */
 
-const myBinaryTree = new BinaryTree();
-myBinaryTree.insert(10);
-myBinaryTree.insert(5);
-myBinaryTree.insert(7);
-myBinaryTree.insert(12);
+// const myBinaryTree = new BinaryTree();
+// myBinaryTree.insert(10);
+// myBinaryTree.insert(5);
+// myBinaryTree.insert(7);
+// myBinaryTree.insert(12);
 
-console.log(myBinaryTree.search(13));
-console.log(myBinaryTree.traverse());
+// console.log(myBinaryTree.search(13));
+// console.log(myBinaryTree.traverse());
+
+/* --------------------------------------- */
+/*  Graph Implementation                   */
+/* --------------------------------------- */
+
+const myGraph = new Graph();
+myGraph.addVertex('A');
+myGraph.addVertex('B');
+myGraph.addVertex('C');
+myGraph.addVertex('D');
+
+myGraph.addEdge('A', 'B');
+myGraph.addEdge('A', 'C');
+myGraph.addEdge('B', 'D');
+
+console.log(myGraph);
+console.log(myGraph.depthFirstSearch('B'));
+console.log(myGraph.breadthFirstSearch('A'));
