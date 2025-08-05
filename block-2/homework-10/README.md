@@ -6,10 +6,10 @@ I think there are several ways to acchieve this project. I choose the most simpl
 
 You just need to run the project, choose which environment do you want:
 
-``` bash filename="terminal - production mode"
+```bash
 npm start
 ```
 
-``` bash filename="terminal - development mode"
+```bash
 npm run dev
 ```
