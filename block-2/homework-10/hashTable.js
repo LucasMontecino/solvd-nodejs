@@ -1,74 +1,141 @@
-import { hashFunction } from './hashFunction.js';
+function hashFn(key, tableLength) {
+  let hash = 17;
+  for (let i = 0; i < key.length; i++) {
+    hash = (hash * key.charCodeAt(i)) % tableLength;
+  }
 
-export class HashTable {
-  constructor(size = 10) {
+  return hash;
+}
+
+class HashTable {
+  constructor(size = 333) {
+    // store the table array, the number of items, and the loadfactor to resize
     this.table = new Array(size);
-    // tracks the number of elements in the hash table
     this.size = 0;
+    this.loadFactor = this.size / this.table.length;
   }
 
-  //   converts the given key into an index within the table array
-  hash(key) {
-    return hashFunction(key, this.table.length);
-  }
+  // programmatically calculated the load factor when need it
+  calcLoadFactor = (newSize, newLength) => {
+    this.loadFactor = newSize / newLength;
+  };
 
-  //   table = [ empty, empty, empty, empty, ISEMPTY, empty, empty, empty... ]
-  // (not real empty values, we know actually that are undefined values)
-  insert(key, value) {
-    const idx = this.hash(key);
+  // method that resize the table, and loop the older table to generate new hashes based on the new length of the table
+  resize = () => {
+    const newTable = new Array(this.table.length * 2);
+
+    this.table.forEach((item) => {
+      if (item) {
+        item.forEach(([key, value]) => {
+          const idx = hashFn(key, newTable.length);
+          if (newTable[idx]) {
+            const item = newTable[idx].find((item) => item[0] === key);
+            if (item) {
+              item[1] = value;
+            } else {
+              newTable[idx].push([key, value]);
+            }
+          } else {
+            newTable[idx] = [[key, value]];
+          }
+        });
+      }
+    });
+
+    this.table = newTable;
+  };
+
+  // set key value pairs handling collisions with separate chaining
+  // recalculate load factor and resize if need it
+  // also we increment the size of elements when we store a new key in the table
+  insert = (key, value) => {
+    const idx = hashFn(key, this.table.length);
+
+    if (this.table[idx]) {
+      const item = this.table[idx].find((item) => item[0] === key);
+      if (item) {
+        item[1] = value;
+      } else {
+        this.size++;
+        this.calcLoadFactor(this.size, this.table.length);
+        if (this.loadFactor > 0.8) {
+          this.resize();
+        }
+        this.table[idx].push([key, value]);
+      }
+    } else {
+      this.size++;
+      this.calcLoadFactor(this.size, this.table.length);
+      if (this.loadFactor > 0.8) {
+        this.resize();
+      }
+      this.table[idx] = [[key, value]];
+    }
+  };
+
+  // we return null if the bucket is empty
+  // otherwise returns the value if the key exists in the bucket or null if it doesn't
+  get = (key) => {
+    const idx = hashFn(key, this.table.length);
+
     if (!this.table[idx]) {
-      // initialize an array if the bucket is empty
-      // table = [und, und, und, [ [key, value] ] , ...]
-      this.table[idx] = [];
+      return null;
     }
 
-    // checking if the key already exists in the table,
-    // if it is, we update the value
+    const item = this.table[idx].find((x) => x[0] === key);
+    return item ? item[1] : null;
+  };
+
+  // return null if the bucket is empty,
+  // otherwise loop trought the bucket
+  // if we find the key, we remove [key, value]
+  // otherwise we return null
+  delete(key) {
+    const idx = hashFn(key, this.table.length);
+
+    if (!this.table[idx]) {
+      return null;
+    }
+
     for (let i = 0; i < this.table[idx].length; i++) {
-      if (this.table[idx][i][0] === key) {
-        this.table[idx][i][1] = value;
+      const curr = this.table[idx][i];
+      if (curr[0] === key) {
+        this.table[idx].splice(i, 1);
+        this.size--;
+
         return;
       }
     }
-    this.table[idx].push([key, value]);
-    this.size++;
-  }
 
-  get(key) {
-    const idx = this.hash(key);
-
-    // key not found
-    if (!this.table[idx]) {
-      return;
-    }
-
-    for (let i = 0; i < this.table[idx].length; i++) {
-      if (this.table[idx][i][0] === key) {
-        return this.table[idx][i][1];
-      }
-    }
-
-    // if the key wasn't found in the bucket
-    return;
-  }
-
-  delete(key) {
-    const idx = this.hash(key);
-    if (!this.table[idx]) {
-      // if it doesn't exist we return false
-      return false;
-    }
-
-    for (let i = 0; i < this.table[idx].length; i++) {
-      if (this.table[idx][i][0] === key) {
-        // remove the element
-        this.table[idx].splice(i, 1);
-        // decrease size variable
-        this.size--;
-        return true;
-      }
-    }
-    // if the key doesn't exist
-    return false;
+    return null;
   }
 }
+
+const myTable = new HashTable(3);
+
+myTable.insert('firstName', 'Bob');
+myTable.insert('lastName', 'Sinclair');
+
+console.log(myTable.delete('lastName'));
+myTable.insert('age', 30);
+myTable.insert('email', 'lucasm9@gmail.com');
+
+console.log(myTable.delete('age'));
+console.log(myTable.delete('firstName'));
+console.log(myTable.delete('email'));
+
+myTable.insert('firstName', 'Bob');
+myTable.insert('lastName', 'Sinclair');
+
+myTable.insert('age', 30);
+myTable.insert('email', 'lucasm9@gmail.com');
+myTable.insert('address', 'belgrano 443');
+
+console.log(myTable.get('firstName'));
+console.log(myTable.get('lastName'));
+console.log(myTable.get('age'));
+console.log(myTable.get('email'));
+
+console.log(myTable.get('street'));
+
+console.log(myTable.table);
